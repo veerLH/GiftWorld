@@ -41,7 +41,7 @@ class ProductController extends Controller
                             return '-';
                         })
                         ->editColumn('main_photo', function($product) {
-                            return '<img src="http://radiant-brook-65745.herokuapp.com/public/storage'.Storage::url($product->main_photo).'" border="0" width="40" class="img-rounded" align="center" />';
+                            return '<img src="http://radiant-brook-65745.herokuapp.com/public/'.Storage::url($product->main_photo).'" border="0" width="40" class="img-rounded" align="center" />';
                       
                         })
                         ->editColumn('description', function($product) {
