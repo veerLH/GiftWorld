@@ -52,6 +52,12 @@
                         Products
                     </a>
                 </li>
+                <li>
+                    <a href="{{route('admin.histories.index')}}" class="sidebar-item">
+                        <i class="metismenu-icon pe-7s-note2"></i>
+                        History
+                    </a>
+                </li>
                 <li class="app-sidebar__heading">User Management</li>
                 <li>
                     <a href="{{route('admin.client-users.index')}}" class="sidebar-item">

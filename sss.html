@@ -1,0 +1,454 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<partial-response id="j_id1"><changes><update id="flightForm"><![CDATA[
+<form id="flightForm" name="flightForm" method="post" action="/flight-result" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="flightForm" value="flightForm" />
+
+	<div class="src-bar js-reveal push-menu">
+       <div class="src-frm">
+           <div class="wrp">
+              <div class="grd">
+	              <div class="col"><table class="no-table js-triptype triptype-opt">
+	<tr>
+<td>
+<input type="radio" checked="checked" name="flightForm:j_idt52" id="flightForm:j_idt52:0" value="ONEWAY" /><label for="flightForm:j_idt52:0"> One Way</label></td>
+<td>
+<input type="radio" name="flightForm:j_idt52" id="flightForm:j_idt52:1" value="ROUNDTRIP" /><label for="flightForm:j_idt52:1"> Round Trip</label></td>
+	</tr>
+</table>
+		  	  	</div>
+	 	   	  </div>
+              <div class="grd grd-sm">
+                  <div class="col-lg-4 col-sm-6 col-xs-12"><div class="ipt-grp grd-0"><div class=" col-6">
+                          <label for="destination-from">From</label><input name="flightForm:j_idt55" value="Yangon" data-target="#departure-list-container" data-toggle="reveal" type="text" readonly="readonly" placeholder="Yangon" id="destination-from" class="autocomplete" /><input id="flightForm:fromStation" name="flightForm:fromStation" value="RGN" type="hidden" class="fromStation" />
+                      </div><div class="col-6">
+                          <label for="destination-to">To</label><input name="flightForm:j_idt57" value="Lashio" data-target="#destination-list-container" data-toggle="reveal" type="text" readonly="readonly" placeholder="Destination Airport" id="destination-to" class="autocomplete" /><input id="flightForm:toStation" name="flightForm:toStation" value="LSH" style="display:none;" type="text" class="toStation" />
+                      </div></div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6 col-xs-12"><div class="ipt-grp grd-0">
+                  		<div class="col-6 onward">
+                          <label for="onward">Depart</label><input id="flightForm:check-in" type="text" name="flightForm:check-in" value="08/06/2020" class="js-reveal js-onward" data-target="#date-container" data-toggle="reveal" />
+                          
+                      </div>
+                      <div class="col-6 return">
+                          <label for="check-out">Return</label><input id="flightForm:check-out" type="text" name="flightForm:check-out" value="06/05/2020" class="js-reveal js-return" data-target="#date-container" data-toggle="reveal" />
+                      </div></div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6 col-xs-12">
+                		<div class="ipt-grp">
+                          <label for="passengers">Passengers/Nationality/Currency</label>
+                          <button id="passengers" type="text" data-toggle="reveal" data-target="#pax-container" data-watch="watch">
+                          	<span data-toggle="pax" data-target=".passenger">1</span> Passenger(s), 
+                          	<span data-toggle="national" data-target=".nationality-radio-list input">Foreigner</span>, 
+                          	<span data-toggle="currency" data-target=".currency-radio-list input" id="currencyCode">USD</span>
+                          </button>                          
+                      </div>
+                  </div><button id="flightForm:searchFlight" name="flightForm:searchFlight" value="" onclick="mojarra.ab(this,event,'action','@form','globalMessage',{'onevent':function(data) { pageLoading(data, '') }});return false" type="submit" class="hd-div">
+   					<i class="ico-search ico-lg"></i> Search Flights
+   				</button>
+              </div>	
+           </div>
+       </div>
+       <div id="container" class="src-bar-opt reveal-content">
+       <a href="#container" data-toggle="reveal" data-target="#container" class=""><i class="js-close ico ico-x" style="font-size: 28px;"></i></a>
+           <div class="wrp">
+               <div id="departure-list-container" class="js-reveal-pane row hidden">
+                   <div class="grd-sm" style="margin:0 8px;">
+                       <div class="col-10">
+                           <input id="departure-airport" type="text" data-target="#destination-from" data-code=".fromStation" data-list="#departure-list" class="js-autocomplete" placeholder="Type or pick your departing city" />
+                           
+                           <div id="departure-list" class="js-autocomplete-list">
+                           <h2>Choose a Departing City</h2>
+                           </div>
+                       </div><div class="col-2">
+                           <a href="#" data-toggle="reveal" data-target="#destination-list-container" class="btn-cta">Next</a>
+                       </div>
+                   </div>
+               </div>
+               <div id="destination-list-container" class="js-reveal-pane row hidden">
+                   <div class="grd-sm" style="margin:0 8px;">
+                       <div class="col-10">
+                           <input id="destination-airport" type="text" data-target="#destination-to" data-parent=".fromStation" data-list="#destination-list" data-code=".toStation" value="" class="js-autocomplete-related" placeholder="Enter desitination" />
+                           
+                           <div id="destination-list" class="js-autocomplete-list">
+                           <h2>Choose Destination City</h2>
+                           </div>
+                       </div><div class="col-2">
+                           <a href="#" data-toggle="reveal" data-target="#date-container" class="btn-cta js-reveal">Next</a><a id="flightForm:destinationCityHiddenBtn" href="#" onclick="mojarra.ab(this,event,'action','@form','flightForm:optCalendarGroup',{'onevent':function(data) { pageLoadingOptDays(data) }});return false"></a>
+                       </div>
+                   </div>
+               </div>
+               <div id="date-container" class="js-reveal-pane grd-lg row hidden"><span id="flightForm:optCalendarGroup" style="width:100%;">
+		           <input type="hidden" id="optDays" value="2019/11/25,2019/10/27,2020/05/07,2020/05/08,2020/05/09,2020/05/11,2020/05/12,2020/05/14,2020/05/15,2020/05/16,2020/05/19,2020/05/20,2020/05/22,2020/05/23,2020/05/24,2020/05/26,2020/05/27,2020/05/29,2020/05/30,2020/05/31,2020/03/30,2020/03/31,2020/04/20,2020/04/21,2020/04/22,2020/04/23,2020/04/24,2020/04/25,2020/04/26,2020/04/27,2020/04/28,2020/04/29,2020/04/30,2020/06/02,2020/06/04,2020/06/06,2020/06/09,2020/06/11,2020/06/13,2020/06/16,2020/06/18,2020/06/20,2020/06/23,2020/06/25,2020/06/27,2020/06/30,2020/07/02,2020/07/04,2020/07/07,2020/07/09,2020/07/11,2020/07/14,2020/07/16,2020/07/18,2020/07/21,2020/07/23,2020/07/25,2020/07/28,2020/07/30,2020/08/01,2020/08/04,2020/08/06,2020/08/08,2020/08/11,2020/08/13,2020/08/15,2020/08/18,2020/08/20,2020/08/22,2020/08/25,2020/08/27,2020/08/29,2020/09/01,2020/09/03,2020/09/05,2020/09/08,2020/09/10,2020/09/12,2020/09/15,2020/09/17,2020/09/19,2020/09/22,2020/09/24,2020/09/26,2020/09/29" />
+		           <input type="hidden" id="optFullDays" value="2019/09/30,2019/12/30,2020/02/23,2020/01/26" />
+		           <input type="hidden" id="minOptDate" value="06/05/2020" />
+				   <input type="hidden" id="maxOptDate" value="20/10/2020" />
+				   <input type="hidden" id="unavailableStartDate" value="01/10/2020" />
+				   <input type="hidden" id="unavailableEndDate" value="20/10/2020" />
+                   <div class="grd-lg" style="margin: 0;">
+                       <div class="col-10">
+                           <div class="grd-lg">
+                               <div id="from" class="datepicker-inline col-md-6"><h2>Departing on</h2></div><div id="to" class="datepicker-inline col-md-6 return"><h2>Returning on</h2></div>
+                               <div id="opt-loading" class="sk-fading-circle" style="display:none;">
+								  <div class="sk-circle1 sk-circle"></div>
+								  <div class="sk-circle2 sk-circle"></div>
+								  <div class="sk-circle3 sk-circle"></div>
+								  <div class="sk-circle4 sk-circle"></div>
+								  <div class="sk-circle5 sk-circle"></div>
+								  <div class="sk-circle6 sk-circle"></div>
+								  <div class="sk-circle7 sk-circle"></div>
+								  <div class="sk-circle8 sk-circle"></div>
+								  <div class="sk-circle9 sk-circle"></div>
+								  <div class="sk-circle10 sk-circle"></div>
+								  <div class="sk-circle11 sk-circle"></div>
+								  <div class="sk-circle12 sk-circle"></div>
+								</div>
+	                            <div class="col-md-12">
+	                            	<div style="background: #eee; padding: 10px 20px; border-radius: 5px;">
+		                            	<div class="highlight-legend"></div>
+		                            	<span style="color: #000;">Indicate flight operating days</span>
+		                            	<div class="highlight-legend-red"></div>
+		                            	<span style="color: #000;">Indicates flights are full</span>
+	                            	</div>
+	                           	</div>
+                           </div>
+                       </div><div class="col-2">
+                           <a href="#" data-toggle="reveal" data-target="#pax-container" class="btn-cta js-reveal">Next</a>
+                       </div>
+                   </div></span>
+               </div>
+               <div id="pax-container" class="js-reveal-pane row hidden">
+               		<div class="row">
+               			<div class="col-md-12">
+               				<div class="grd-lg">
+			                   <div class="col-md-4">
+			                       <h2>Passengers</h2>
+			                       <div class="grd-0 row-lined">
+			                           <div class="col-6">
+			                               <label for="adult" style="padding: 0px;">Adult <br />
+			                               <small>12+ years</small></label>
+			                           </div><div class="col-6">
+			                           	<div class="inp-grp">
+			                                   <button class="js-pax" data-step="minus" data-target="#adult"><i class="ico-minus"></i></button><input name="flightForm:j_idt68" value="1" pattern="[1-9]*" type="number" data-parent="#children" min="1" readonly="readonly" id="adult" class="js-pax adult js-watch passenger flightsearch-input" data-remaining="true" inputmode="numeric" max="9" style="padding: 10px; margin-left: 6px; text-align: center;" />
+			                                   <button class="js-pax" data-step="plus" data-target="#adult"><i class="ico-plus"></i></button>
+			                               </div>
+			                           </div>
+			                       </div>
+			                       <div class="grd-0 row-lined">
+			                           <div class="col-6">
+			                               <label for="children" style="padding: 0px;">Children <br />
+			                               <small>2-11 years</small></label>
+			                           </div><div class="col-6">
+			                               <div class="inp-grp">
+			                                   <button class="js-pax" data-step="minus" data-target="#children"><i class="ico-minus"></i></button><input name="flightForm:j_idt70" value="0" pattern="[0-9]*" type="number" data-parent="#adult" min="0" readonly="readonly" id="children" class="js-pax children js-watch passenger flightsearch-input" data-remaining="true" inputmode="numeric" max="9" style="padding: 10px; margin-left: 6px; text-align: center;" />
+			                                   <button class="js-pax" data-step="plus" data-target="#children"><i class="ico-plus"></i></button>
+			                               </div>
+			                           </div>
+			                       </div>
+			                       <div class="grd-0 row-lined">
+			                           <div class="col-6">
+			                               <label for="infant" style="padding: 0px;">Infant <br />
+			                               <small>Under 2 years</small></label>
+			                               <div><small>Only one infant per adult</small></div>
+			                           </div><div class="col-6">
+			                               <div class="inp-grp">
+			                                   <button class="js-pax" data-step="minus" data-target="#infant"><i class="ico-minus"></i></button><input name="flightForm:j_idt72" value="0" pattern="[0-9]*" data-parent="#adult" type="number" min="0" readonly="readonly" id="infant" class="js-pax infant js-watch passenger flightsearch-input" inputmode="numeric" max="9" style="padding: 10px; margin-left: 6px; text-align: center;" />
+			                                   <button class="js-pax" data-step="plus" data-target="#infant"><i class="ico-plus"></i></button>
+			                               </div>
+			                           </div>
+			                       </div>
+			                   </div>
+			                   <div class="col-md-2">
+		                           <h2>Nationality</h2>
+		                       	   <div class="row-lined"><table class="no-table radio-list nationality-radio-list">
+	<tr>
+<td>
+<input type="radio" checked="checked" name="flightForm:j_idt74" id="flightForm:j_idt74:0" value="0" /><label for="flightForm:j_idt74:0"> Foreigner</label></td>
+	</tr>
+	<tr>
+<td>
+<input type="radio" name="flightForm:j_idt74" id="flightForm:j_idt74:1" value="1" /><label for="flightForm:j_idt74:1"> Myanmar</label></td>
+	</tr>
+</table>
+							   		</div>
+			                   </div>
+			                   <div class="col-md-3">
+		                           <h2>Currency</h2>
+		                       	   <div class="row-lined">
+								   			<table class="no-table radio-list currency-radio-list">
+	<tr>
+<td>
+<input type="radio" checked="checked" name="flightForm:j_idt77" id="flightForm:j_idt77:0" value="USD" onchange="changeCurrency(this.value)" /><label for="flightForm:j_idt77:0"> US Dollar — USD </label></td>
+	</tr>
+</table>
+									</div>
+								</div>
+								<div class="col-md-3">
+		                           <h2>Promotional Code</h2>
+		                       	   <div class="row-lined"><input name="flightForm:j_idt81" style="margin-left: 3px;" type="type" />
+									</div>
+								</div>
+			               </div>
+                   		</div>
+                   </div>
+               </div>
+           </div>
+       </div>
+    </div>
+    <script>
+	    function changeCurrency(selectedValue) {
+	    	$("#currencyCode").html(selectedValue);
+	    }
+    </script>
+	<div class="src-bar">
+		<div class="src-frm">
+			<div class="wrp">
+				<div class="grd-lg">
+					<div class="col">
+						<div class="lbl">Yangon
+						</div>
+						<div class="lbl-xl">RGN
+						</div>
+					</div>
+						<div class="col pdg-0"><div class="lbl-xl">→</div></div>
+					<div class="col">
+						<div class="lbl">Lashio
+						</div>
+						<div class="lbl-xl">LSH
+						</div>
+					</div>
+					<div class="col">
+						<div class="lbl">Departing</div>
+						<div class="lbl-xl">08/06/2020
+						</div>
+					</div>
+					<div class="col">
+						<div class="lbl">Passengers and Nationality</div>
+						<div class="lbl-xl">1
+							Adult,
+							0
+							Children,
+							0
+							Infant,
+							Foreigner
+						</div>
+					</div>
+					<div class="col">
+						<a href="#search" data-toggle="reveal" data-target="#departure-list-container" data-toggle-target="#departure-list-container">Change</a>
+					</div>
+				</div>
+				<p></p>
+			</div>
+		</div>
+	</div>
+		<div class="wrp">
+            <div class="pgb grd-lg-0">
+                <a class="pgb-stp is-previous " href="#search" data-toggle="reveal" data-target="#departure-list-container" data-toggle-target="#departure-list-container">
+					<i class="ico-search"></i> <span class="pgb-lbl">Search</span>
+				</a>
+                <a class="pgb-stp   is-active">
+                    <i class="ico-aeroplane"></i> <span class="pgb-lbl">Flights</span>
+                </a>
+                <a class="pgb-stp  ">
+                    <i class="ico-user"></i> <span class="pgb-lbl">Passengers</span>
+                </a>
+                <a class="pgb-stp  ">
+                    <i class="ico-credit-card"></i> <span class="pgb-lbl">Payment</span>
+                </a>
+                <a class="pgb-stp ">
+                    <i class="ico-check-list"></i> <span class="pgb-lbl">Confirmation</span>
+                </a>
+            </div>
+        </div>
+        <div class="wrp errmsg-position">
+        </div>
+        <div class="wrp flight-rst">
+				<div class="grd-0">
+					<div class="col-md-8">
+						<h1 class="searched_data">
+							Yangon - Lashio
+						</h1>
+						<h2 class="gray">
+							<small>
+							Departing : 
+							08/06/2020
+							</small>
+						</h2>
+						<div class="cal">
+				            <div class="wrp"><a id="flightForm:j_idt143" href="#" onclick="mojarra.ab(this,event,'action',0,'flightForm',{'onevent':function(data) { pageLoading(data, 'fareChoose') }});return false" class="cal-nav cal-nav-prev">
+									<i class="ico-chevron-left"></i><span class="hidden">Previous</span></a>
+				                <div class="cal-timeline"><a id="flightForm:j_idt146" href="#" onclick="mojarra.ab(this,event,'action',0,'flightForm',{'onevent':function(data) { pageLoading(data, 'fareChoose') }});return false" class="cal-day">
+										<div class="cal-date"><label>Fri 05 Jun</label>
+										</div>
+										<small>From</small>
+										<br />
+										 <span style="font-size: 12px;"><strong>USD </strong></span>97.13</a><a id="flightForm:j_idt155" href="#" onclick="mojarra.ab(this,event,'action',0,'flightForm',{'onevent':function(data) { pageLoading(data, 'fareChoose') }});return false" class="cal-day">
+										<div class="cal-date"><label>Sat 06 Jun</label>
+										</div>
+										<small>From</small>
+										<br />
+										<span style="font-size: 12px;"><strong>USD </strong></span>97.13</a><a id="flightForm:j_idt164" href="#" onclick="mojarra.ab(this,event,'action',0,'flightForm',{'onevent':function(data) { pageLoading(data, 'fareChoose') }});return false" class="cal-day">
+										<div class="cal-date"><label>Sun 07 Jun</label>
+										</div>
+										<small>From</small>
+										<br />
+										<span style="font-size: 12px;"><strong>USD </strong></span>97.13</a><a id="flightForm:j_idt173" href="#" onclick="mojarra.ab(this,event,'action',0,'flightForm',{'onevent':function(data) { pageLoading(data, 'fareChoose') }});return false" class="cal-day is-active">
+										<div class="cal-date"><label>Mon 08 Jun</label>
+										</div>
+										<small>From</small>
+										<br />
+										<span style="font-size: 12px;"><strong>USD </strong></span>97.13</a><a id="flightForm:j_idt178" href="#" onclick="mojarra.ab(this,event,'action',0,'flightForm',{'onevent':function(data) { pageLoading(data, 'fareChoose') }});return false" class="cal-day">
+										<div class="cal-date"><label>Tue 09 Jun</label>
+										</div>
+										<small>From</small> 
+										<br />
+										<span style="font-size: 12px;"><strong>USD </strong></span>97.13</a><a id="flightForm:j_idt183" href="#" onclick="mojarra.ab(this,event,'action',0,'flightForm',{'onevent':function(data) { pageLoading(data, 'fareChoose') }});return false" class="cal-day">
+										<div class="cal-date"><label>Wed 10 Jun</label>
+										</div>
+										<small>From</small>
+										<br />
+										<span style="font-size: 12px;"><strong>USD </strong></span>97.13</a><a id="flightForm:j_idt188" href="#" onclick="mojarra.ab(this,event,'action',0,'flightForm',{'onevent':function(data) { pageLoading(data, 'fareChoose') }});return false" class="cal-day">
+										<div class="cal-date"><label>Thu 11 Jun</label>
+										</div>
+										<small>From</small> 
+										<br />
+										<span style="font-size: 12px;"><strong>USD </strong></span>97.13</a>
+				                </div><a id="flightForm:j_idt194" href="#" onclick="mojarra.ab(this,event,'action',0,'@form',{'onevent':function(data) { pageLoading(data, 'fareChoose') }});return false" class="cal-nav cal-nav-next">
+									<i class="ico-chevron-right"></i><span class="hidden">Next</span></a>
+				            </div>
+				        </div>
+						<div class="grd-0">
+	                    	<div class="col-md-3">
+	                    		<h3>Departing Flights</h3>
+	                    	</div>
+	                        <div class="col-md-9 dta-opt">
+	                            	<div class="dta-lbl" style="text-align:center;width:45.0%;">
+	                            		<h4>Best fares</h4>
+	                            	</div>
+	                            	<div class="dta-lbl" style="text-align:center;width:45.0%;">
+	                            		<h4>Flexible fares</h4>
+	                            	</div>
+	                        </div>
+		                </div>
+	                    <div class="dta">
+	                        <div class="grd-0">
+	                            <div class="col-md-3">
+									<div>K7828 — Onward</div>
+									<div class="dta-val">
+										<div class="lbl-lg">12:30</div><label>RGN</label>
+									</div>									
+									<div class="dta-val">→</div>
+									<div class="dta-val">
+										  <div class="lbl-lg">14:15</div><label>LSH</label>
+									</div>
+	                            </div>
+	                            <div class="dta-opt col-md-9"><a id="flightForm:j_idt200:0:j_idt227:0:j_idt228" href="#" onclick="mojarra.ab(this,event,'action',0,'flightForm',{'onevent':function(data) { pageLoading(data, 'fareChoose') }});return false" style="width:45.0%;" class="btn-outline is-checked">
+			                                	<div class="cur"><label>USD</label>
+			                                	</div>
+			                                	<div class="cur-val" style="margin-bottom: 5px;">97.13
+			                                	</div>
+												<div class="cur">
+													<i class="ico-briefcase" style="display: inline-block; "></i>
+													20 KG
+												</div>
+				                                	<div class="seat-remain tooltip">
+					                                	<div class="cur str ">5
+															<span class="tooltiptext">5
+																Seats remaining
+															</span>
+					                                	</div>
+				                                	</div></a><a id="flightForm:j_idt200:0:j_idt227:1:j_idt228" href="#" onclick="mojarra.ab(this,event,'action',0,'flightForm',{'onevent':function(data) { pageLoading(data, 'fareChoose') }});return false" style="width:45.0%;" class="btn-outline ">
+			                                	<div class="cur"><label>USD</label>
+			                                	</div>
+			                                	<div class="cur-val" style="margin-bottom: 5px;">136.13
+			                                	</div>
+												<div class="cur">
+													<i class="ico-briefcase" style="display: inline-block; "></i>
+													20 KG
+												</div>
+				                                	<div class="seat-remain tooltip">
+					                                	<div class="cur str ">9
+															<span class="tooltiptext">9
+																Seats remaining
+															</span>
+					                                	</div>
+				                                	</div></a>
+	                            </div>
+	                        </div>
+	                    </div>
+                    <br />
+                    <br />
+					</div>
+		           <div class="col-md-4">
+						<div id="sidebar" class="summary">
+		<div>
+              <h2>Your booking summary</h2>
+              <p>
+				  <h3>Departure Flight</h3>
+                  <div class="dta-val">
+                      <div>Yangon</div>
+                      <div class="lbl-lg">RGN</div>
+                  </div>                  
+                  <div class="dta-val">→</div>
+                  <div class="dta-val">
+                      <div>Lashio</div>
+                      <div class="lbl-lg">LSH</div>
+                  </div>
+                  <div class="dta-val" style="padding-left:10px;">
+                      <div>K7828 — Onward</div>
+                      <div class="lbl-lg">08/06/2020</div>
+                  </div>
+			  </p>
+			  	<p>
+			  		<div class="dta-val">
+			  				<b style="color: rgb(224, 156, 60);">Refundable with fee</b>
+			  			<br />
+			  				From 90 day(s)* until flight <b style="color: rgb(0, 105, 0)">47.5 USD</b>
+			  				<br />
+			  				Until 90 day(s)* after the flight <b style="color: rgb(0, 105, 0)">47.5 USD</b>
+			  				<br />
+			  				Additional penalty in case of no-show <b style="color: rgb(0, 105, 0)">10 USD</b>
+			  				<br />
+			  		</div>
+			  	</p>
+			  	<p>
+			  		<div class="dta-val">
+			  				<b style="color: rgb(224, 156, 60);">Modifiable with fee</b>
+			  			<br />
+			  				From 90 day(s)* until flight <b style="color: rgb(0, 105, 0)">10 USD</b>
+			  				<br />
+			  				Until 90 day(s)* after the flight <b style="color: rgb(0, 105, 0)">10 USD</b>
+			  				<br />
+			  				Additional penalty in case of no-show <b style="color: rgb(0, 105, 0)">10 USD</b>
+			  				<br />
+			  		</div>
+			  	</p>
+			  	<p>
+			  		<div class="dta-val">
+			  			<b style="color: rgb(224, 156, 60);">Check-in luggage</b><br />
+			  					Adult(s) : 
+			  				
+			  				<b>20 Kg</b>
+			  				<br />
+			  		</div>
+			  	</p>
+              <p class="lbl-md">1 Adult × 
+                  <span>USD </span>97.13
+                  <span>= USD </span>97.13
+              </p>
+              <div>Basic fare <span class="summary-label5">USD</span> <span> </span>95.00
+              </div>
+              <div>Tax and service charges <span class="summary-label5">USD</span> <span> </span><span class="summary-label5">2.13</span>
+             </div>
+              <p class="lbl-lg">
+              	  	Grand Total : 
+              	  USD <span> </span>97.13 
+              </p>
+              <p><a href="#modal" data-toggle="modal" data-target="#modal" data-url="/static-page-dialog/travel-policy #staticDiv">Travel Policy</a></p>
+          </div>
+						    <p><a id="flightForm:j_idt552" href="#" onclick="mojarra.ab(this,event,'action',0,'flightForm',{'onevent':function(data) { pageLoading(data, 'fareChoose'); window.scrollTo(0,0); }});return false" class="btn-cta">
+						    	Continue</a></p>
+						</div>           
+					</div>
+				</div>
+		</div>
+</form>]]></update><update id="j_id1:javax.faces.ViewState:0"><![CDATA[-3846264833608628213:187736406077732455]]></update></changes></partial-response>

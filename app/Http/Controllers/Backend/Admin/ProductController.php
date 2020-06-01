@@ -109,7 +109,7 @@ class ProductController extends Controller
         }
 
         if ($request->hasFile('main_photo')) {
-            $photo = $request->file('main_photo')->store(config('tour_packages.paths.products'), 'public');
+            
         } 
         if($request->hasfile('feature_photo'))
          {
@@ -219,8 +219,22 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Product $product)
     {
-        //
+        
+        $product->delete();
+        return ResponseHelper::success();
+    }
+
+    public function trash(Product $product)
+    {
+        $product->trash();
+        return ResponseHelper::success();
+    }
+
+    public function restore(Product $product)
+    {
+        $product->restore();
+        return ResponseHelper::success();
     }
 }

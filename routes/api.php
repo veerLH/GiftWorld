@@ -25,6 +25,8 @@ Route::group(['namespace' => 'Api'], function () {
     Route::get('/products/{product}', 'ProductController@product');
     Route::get('/categories', 'CategoryController@categories');
     Route::get('/categories/{category}', 'CategoryController@category');
+
+    Route::get('/history/{history}', 'HistoryController@history');
 });
 
 Route::group(['namespace' => 'Api', 'middleware' => 'auth:api'], function () {

@@ -29,6 +29,13 @@ Route::name('admin.')
         Route::put('/categories/{category}/restore', 'CategoriesController@restore')->name('categories.restore');
 
         Route::resource('products', 'ProductController');
+        Route::put('/products/{product}/trash', 'ProductController@trash')->name('products.trash');
+        Route::put('/products/{product}/restore', 'ProductController@restore')->name('products.restore');
+
+
+        Route::resource('histories', 'HistoryController');
+        Route::put('/histories/{history}/trash', 'HistoryController@trash')->name('histories.trash');
+        Route::put('/histories/{history}/restore', 'HistoryController@restore')->name('histories.restore');
 
         Route::get('/', 'IndexController@index')->name('index');
     });
